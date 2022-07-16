@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-rsvp
+  name: ingress
   annotations:
     nginx.ingress.kubernetes.io/ingress-rsvp: /$1
 spec:
   rules:
-    - host: rsvp-app.ok
+    - host: app-web.io
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: rsvp
+                name: appweb
                 port:
                   number: 80

@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb
+  name: appdb
   labels:
-    app: rsvpdb
+    app: appdb
 spec:
   ports:
   - port: 27017
     protocol: TCP
   selector:
-    appdb: rsvpdb
+    appdb: appdb

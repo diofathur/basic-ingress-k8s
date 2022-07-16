@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: rsvp
-  name: rsvp
+    app: appweb
+  name: appweb
 spec:
   progressDeadlineSeconds: 2147483647
   replicas: 1
   revisionHistoryLimit: 2147483647
   selector:
     matchLabels:
-      app: rsvp
+      app: appweb
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -21,15 +21,15 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: rsvp
+        app: appweb
     spec:
       containers:
       - env:
         - name: MONGODB_HOST
           value: mongodb
-        image: teamcloudyuga/rsvpapp
+        image: teamcloudyuga/appwebapp
         imagePullPolicy: Always
-        name: rsvp-app
+        name: appweb-app
         ports:
         - containerPort: 5000
           name: web-port
