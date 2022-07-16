@@ -18,3 +18,11 @@
         kubectl apply -f app/<name>.yaml
         kubectl apply -f ingress/<name>.yaml
 
+5. edit nginx-controller
+
+        kubectl edit svc nama-service -n namespace
+
+6. test on your browser
+
+        http://app.ok
+
