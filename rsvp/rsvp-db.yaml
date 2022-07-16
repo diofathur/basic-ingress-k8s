@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    appdb: appdb 
-  name: appdb
+    appdb: rsvpdb
+  name: rsvp-db
 spec:
   progressDeadlineSeconds: 2147483647
   replicas: 1
   revisionHistoryLimit: 2147483647
   selector:
     matchLabels:
-      appdb: appdb
+      appdb: rsvpdb
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -21,7 +21,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        appdb: appdb
+        appdb: rsvpdb
     spec:
       containers:
       - env:
